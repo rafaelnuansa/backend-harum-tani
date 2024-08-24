@@ -69,5 +69,12 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'aparaturs.create', 'guard_name' => 'api']);
         Permission::create(['name' => 'aparaturs.edit', 'guard_name' => 'api']);
         Permission::create(['name' => 'aparaturs.delete', 'guard_name' => 'api']);
+
+
+        //permission for teams
+        Permission::create(['name' => 'teams.index', 'guard_name' => 'api']);
+        Permission::create(['name' => 'teams.create', 'guard_name' => 'api']);
+        Permission::create(['name' => 'teams.edit', 'guard_name' => 'api']);
+        Permission::create(['name' => 'teams.delete', 'guard_name' => 'api']);
     }
 }

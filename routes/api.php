@@ -72,6 +72,10 @@ Route::prefix('admin')->group(function () {
         //Aparaturs
         Route::apiResource('/aparaturs', App\Http\Controllers\Api\Admin\AparaturController::class)
             ->middleware('permission:aparaturs.index|aparaturs.store|aparaturs.update|aparaturs.delete');
+
+
+        Route::apiResource('/teams', App\Http\Controllers\Api\Admin\TeamController::class)
+        ->middleware('permission:teams.index|teams.store|teams.update|teams.delete');
     });
 });
 
@@ -104,6 +108,9 @@ Route::prefix('public')->group(function () {
 
     //index aparaturs
     Route::get('/aparaturs', [App\Http\Controllers\Api\Public\AparaturController::class, 'index']);
+
+    //index teams
+    Route::get('/teams', [App\Http\Controllers\Api\Public\TeamController::class, 'index']);
 
     //index photos
     Route::get('/photos', [App\Http\Controllers\Api\Public\PhotoController::class, 'index']);
